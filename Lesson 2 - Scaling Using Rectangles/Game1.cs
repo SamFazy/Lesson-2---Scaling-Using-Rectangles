@@ -15,6 +15,8 @@ namespace Lesson_2___Scaling_Using_Rectangles
         Texture2D circTexture;
         Rectangle circRectangle;
 
+        SpriteFont textFont;
+
 
         public Game1()
         {
@@ -38,6 +40,8 @@ namespace Lesson_2___Scaling_Using_Rectangles
             // TODO: use this.Content to load your game content here
             rectTexture = Content.Load<Texture2D>("rectangle");
             circTexture = Content.Load<Texture2D>("circle");
+
+            textFont = Content.Load<SpriteFont>("TextFont");
         }
 
         protected override void Update(GameTime gameTime)
@@ -65,6 +69,8 @@ namespace Lesson_2___Scaling_Using_Rectangles
             _spriteBatch.Draw(rectTexture, new Rectangle(270, 200, 240, 20), Color.Black);
             _spriteBatch.Draw(rectTexture, new Rectangle(270, 190, 20, 20), Color.Black);
             _spriteBatch.Draw(rectTexture, new Rectangle(490, 190, 20, 20), Color.Black);
+
+            _spriteBatch.DrawString(textFont, "Bob", new Vector2(90, 80), Color.Black);
 
             _spriteBatch.End();
             base.Draw(gameTime);
